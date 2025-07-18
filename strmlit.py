@@ -1,8 +1,13 @@
+import pandas as pd
 import streamlit as st
-from PIL import Image 
+st.title("upload csv")
+st.write("choose the csv file required")
+uploaded_file=st.file_uploader("browse files")
+if uploaded_file:
+  file=pd.read_csv(uploaded_file)
+  st.write(file)
+  
 
-st.title(" welcome ")
 
-st.write("Welcome to this simple Streamlit app! ")
 
-st.success("This is a success message!")
+
